@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Blog</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../style.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!-----------------main video showcase and navbar-------->
+
+    <header id="showcase">
+
+        <div class="navbar">
+            <div class="mylogo">
+                <h1>BELLA'S</h1s>
+
+            </div>
+
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/explore">EXPLORE</a></li>
+
+                </ul>
+
+            </nav>
+        </div>
+
+        <div class="search btn">
+            <form>
+                <input type="text" placeholder="search for recipes....." class="input-1">
+                <a href="/explore"><button class="button-1">Submit</button></a>
+            </form>
+
+
+
+    </header>
+
+    <!-------------Section1-->
+    <section class="section1">
+        <div id="container">
+            <h1><i>Welcome To Bella's Recipe Blog</i></h1>
+            <div class="flex1">
+                <div class="section-text">
+                    <h2>ABOUT US</h2>
+                    <p>Hello, Welcome to Bella's Recipe Blog, where you find all the Unique recipes from people around
+                        the world.
+                        Bella's Recipe Blog has the latest recipes from Cooks and Chefs and People like Ourselves who
+                        loves food. Browse through the collections of recipes and kindly feel free to
+                        add your own special recipe so I can try.Leave a review of a recipe you have tried and recommend
+                        to others.
+                        We cherish your incredible inputs and would love to hear a lot more of you. Thanks for dropping
+                        by.
+                    </p>
+
+                </div>
+
+                <div class="side-button">
+                    <a href="/contact"><button class="button-2">ADD A RECIPE</button></a>
+                </div>
+            </div>
+
+        </div>
+
+        </div>
+
+    </section>
+
+
+    <!---Section2-->
+    <section class="section2">
+        <div id="container">
+            <h2>TOP RECIPES THIS WEEK</h2>
+            <div class="main-card">
+
+
+                <% if (field.length) { %>
+                    <% field.forEach(pass=> { %>
+                        <div class="inside-card">
+
+                            <div class="card-text">
+                                <h3>
+                                    Recipe Name:
+                                    <%= pass.recipy %>
+                                </h3>
+                                <h4>
+                                    <%= pass.chef %>
+                                </h4>
+                            </div>
+                            <div class="card-btn">
+                                <a href="/about"><button class="card-but1">Full Recipe</button></a>
+                            </div>
+                        </div>
+
+
+
+                        <% }) %>
+
+                            <% } %>
+            </div>
+
+
+
+
+
+
+            <!---
+
+            <div class="main-card">
+
+                <div class="inside-card">
+
+                    <div class="card-image">
+                        <img src="../images/image8.jpg">
+                    </div>
+
+                    <div class="card-text">
+                        <h3>Recipe Name: Tilapia</h3>
+                        <h4>Recipe By: Ashbella</h4>
+                    </div>
+
+                    <div class="card-btn">
+                        <a href="/about"><button class="card-but1">Full Recipe</button></a>
+                    </div>
+
+                </div>
+
+                <div class="inside-card">
+
+                    <div class="card-image">
+                        <img src="../images/image8.jpg">
+                    </div>
+
+                    <div class="card-text">
+                        <h3>Recipe Name:Tilapia</h3>
+                        <h4>Recipe By:Bella</h4>
+                    </div>
+
+                    <div class="card-btn">
+                        <a href="/about"><button class="card-but1">Full Recipe</button></a>
+
+                    </div>
+
+                </div>
+
+                <div class="inside-card">
+
+                    <div class="card-image">
+                        <img src="../images/image4.jpg">
+                    </div>
+
+                    <div class="card-text">
+                        <h3>Recipe Name: Tilapia</h3>
+                        <h4>Recipe By: Mahlison</h4>
+                    </div>
+
+                    <div class="card-btn">
+                        <a href="/about"><button class="card-but1">Full Recipe</button></a>
+                    </div>
+
+                </div>
+
+
+            </div>-->
+
+
+        </div>
+    </section>
+    <footer>
+        <div class="nav-bar">
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/explore">EXPLORE</a></li>
+
+                </ul>
+
+            </nav>
+
+
+        </div>
+
+
+
+        <p>Powered By Blogger &copy; 2022 | THEME BY: ASHBELLA </p>
+    </footer>
+
+
+
+</body>
+
+</html>

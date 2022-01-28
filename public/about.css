@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*------styling the header and navbar-----*/
+
+.mylogo{
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    font-weight: bolder;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+
+nav{
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+a:hover{
+    color: black;
+    opacity: 0.5;
+}
+
+nav ul li {
+    display: inline;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Cormorant';
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 5rem;
+   
+}
+
+.navbar ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: rgb(133, 116, 116);
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+/*styling the full recipe*/
+
+#showcase3 img{
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: 50% 50%;
+    margin-top: 3rem;
+    
+    
+}
+
+#showcase3 h2{
+    text-align: center;
+    font-size: 1.5rem;
+    color: tomato;
+    font-family: 'Corinthia';
+    margin-top: 5rem;
+}
+
+.ingredient-section{
+    width: 1086px;
+    height: 300px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    border-left: 10px solid tomato;
+}
+
+.recipe-section{
+    width: 1086px;
+    height: 300px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    border-left: 10px solid tomato;
+    border-radius: 2px;
+    margin-bottom: 7rem;
+}
+
+#showcase3 h4{
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: tomato;
+    font-size: 1.2rem;
+    font-family: 'Corinthia';
+}
+
+/*styling the footer*/
+
+footer{
+    background-color: thistle;
+    min-height: 200px;
+}
+    

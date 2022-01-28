@@ -1,0 +1,229 @@
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Kalam:wght@300&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Assistant:wght@200&family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Kalam:wght@300&family=Poppins&family=Tajawal:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Assistant:wght@200&family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Kalam:wght@300&family=Oswald:wght@200&family=Poppins&family=Tajawal:wght@200;300;400&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    line-height: 1.5rem;
+    
+}
+
+/*styling the header*/
+
+#showcase{
+    background-image: url(../images/image2.jpg);
+    height: 700px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mylogo{
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    font-weight: bolder;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+
+nav{
+    margin-top: 2rem;
+}
+
+a:hover{
+    color: black;
+    opacity: 0.5;
+}
+
+nav ul li {
+    display: inline;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Cormorant';
+    color: black;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 5rem;
+   
+}
+
+.navbar ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+/*styling header button and input field and section*/
+
+.input-1{
+    height: 50px;
+    width: 600px;
+    margin-left: 15rem;
+    margin-top: 25rem;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+}
+
+.button-1{
+    padding: 1rem 3.5rem;
+    font-size: 1rem;
+    background-color: #F9C784;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+
+.button-1:hover{
+    background-color: wheat;
+    color: white;
+    
+
+}
+
+#container{
+    width: 80%;
+    margin: auto;
+}
+
+/*styling section1*/
+
+.section-text{
+    
+    border: 2px dashed tomato;
+
+}
+
+.section-text h2{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+.section1 h1{
+    font-size: 2.3rem;
+    text-align: center;
+    margin-top: 5.5rem;
+    color: tomato;
+}
+
+.section1 p{
+    width: 70%;
+    margin-left: 5rem;
+    text-align: center;
+    line-height: 2.5rem;
+    word-spacing: 0.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 4rem;
+    
+}
+
+
+.flex1{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin-top: 5rem;
+}
+
+.button-2{
+    padding: 2rem 9rem;
+    margin-top: 9rem;
+    font-size: 1.5rem;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+    outline: none;
+    border: 1px dashed tomato;
+    cursor: pointer;
+    margin-left: -5rem;
+    font-family: 'Oswald';
+
+}
+
+.button-2:hover{
+    background-color: #F9C7BD;
+    color: white;
+}
+
+/* styling sectiontwo*/
+.section2 h2{
+    text-align: center;
+    margin-top: 10rem;
+    margin-bottom: 3rem;
+    font-family: 'Oswald';
+
+}
+
+.main-card{
+    display: flex;
+    justify-content: center;
+    gap: 1.7em;
+
+}
+
+.inside-card{
+    height: 28rem;
+    width: 20rem;
+    border-radius: 18px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);  
+    transition: 0.5s ease; 
+    cursor: pointer; 
+
+}
+
+.inside-card:hover{
+    transform: scale(1.2);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
+}
+
+.inside-card img{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+}
+
+.card-text{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1rem;
+    font-family: 'Oswald';
+}
+
+.card-but1{
+    padding: 1.5rem 3rem;
+    margin-top: 2rem;
+    border: none;
+    outline: none;
+    background-color: #F9C784;
+    text-align: center;
+    color: white;
+    margin-left: 5rem;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-family: 'Oswald';
+}
+
+
+
+
+
+
+footer{
+    background-color: #F9C784;; 
+    height: 200px;
+    margin-top: 5rem ;
+}
+

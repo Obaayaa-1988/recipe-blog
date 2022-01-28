@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Assistant:wght@200&family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Kalam:wght@300&family=Oswald:wght@200&family=Poppins&family=Tajawal:wght@200;300;400&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+.mylogo{
+    font-size: 1.5rem;
+    padding-top: 2rem;
+    font-weight: bolder;
+}
+.navbar{
+    display: flex;
+    justify-content: space-around;
+}
+
+nav{
+    margin-top: 3rem;
+}
+
+a:hover{
+    color: black;
+    opacity: 0.5;
+}
+
+nav ul li {
+    display: inline;
+    text-decoration: none;
+    font-size: 1rem;
+    font-family: 'Cormorant';
+    color: black;
+    font-weight: bold;
+    margin-left: 2rem;
+    margin-top: 5rem;
+   
+}
+
+.navbar ul li a{
+    list-style: none;
+    text-decoration: none;
+    color: black;
+}
+
+.container{
+    width: 80%;
+    margin: auto;
+}
+/*styling the add recipe form*/
+
+
+#showcase2{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url(../images/image4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: 3rem;
+   
+}
+form{
+    margin: 1em 14em;
+    
+}
+
+#showcase2 h2{
+    text-align: center;
+    padding-top: 5rem;
+    font-size: 2rem;
+    color: white;
+    font-family: 'Oswald';
+
+}
+
+.input2{
+    display: block;
+    height: 60px;
+    width: 600px;
+    outline: none;
+    border: none;
+    padding-left: 3rem;
+    border-radius: 10px;
+}
+
+textarea{
+    display: block;
+    outline: none;
+    border: none;
+}
+
+::placeholder{
+    font-family: 'Oswald';
+    font-size: 1.1rem;
+    font-weight: bold;
+
+}
+
+
+.form-button, .form-button2{
+    padding: 2rem 2.1rem;
+    font-size: 1.1rem;
+    background-color:#F9C784;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    cursor: pointer;
+    font-family: 'Oswald';
+}
+.form-button2{
+    margin-left: 17rem;
+}
+
+footer{
+    background-color: rgb(233, 208, 200);
+    height: 200px;
+    margin-top: 7rem;
+}
