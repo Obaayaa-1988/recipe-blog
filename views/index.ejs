@@ -18,7 +18,7 @@
 
         <div class="navbar">
             <div class="mylogo">
-                <h1>BELLA'S</h1s>
+                <h2>BELLA'S</h2>
 
             </div>
 
@@ -34,6 +34,11 @@
             </nav>
         </div>
 
+        <div class="showcase-text">
+            <h1> BELLA'S RECIPES.</h1>
+        </div>
+
+
         <div class="search btn">
             <form>
                 <input type="text" placeholder="search for recipes....." class="input-1">
@@ -47,24 +52,24 @@
     <!-------------Section1-->
     <section class="section1">
         <div id="container">
-            <h1><i>Welcome To Bella's Recipe Blog</i></h1>
             <div class="flex1">
                 <div class="section-text">
-                    <h2>ABOUT US</h2>
+                    <h2><span>A</span>BOUT US</h2>
                     <p>Hello, Welcome to Bella's Recipe Blog, where you find all the Unique recipes from people around
                         the world.
                         Bella's Recipe Blog has the latest recipes from Cooks and Chefs and People like Ourselves who
                         loves food. Browse through the collections of recipes and kindly feel free to
                         add your own special recipe so I can try.Leave a review of a recipe you have tried and recommend
-                        to others.
-                        We cherish your incredible inputs and would love to hear a lot more of you. Thanks for dropping
-                        by.
+                        to others.Thanks for droppingby.
+                        
+                        <a href="/contact"><button class="button-2">ADD YOUR RECIPE</button></a>
                     </p>
 
                 </div>
 
-                <div class="side-button">
-                    <a href="/contact"><button class="button-2">ADD A RECIPE</button></a>
+                <div class="side-image">
+                    <img src="../images/image3.jpg">
+
                 </div>
             </div>
 
@@ -81,17 +86,20 @@
             <h2>TOP RECIPES THIS WEEK</h2>
             <div class="main-card">
 
-
                 <% if (field.length) { %>
-                    <% field.forEach(pass=> { %>
-                        <div class="inside-card">
 
+                    <% field.reverse().slice(0,3).forEach(pass=> { %>
+                        <div class="inside-card">
+                            <div>
+                                <img src="/uploads/imageUpload<%= pass.imageUpload %>" alt="" srcset="">
+                            </div>
                             <div class="card-text">
                                 <h3>
                                     Recipe Name:
                                     <%= pass.recipy %>
                                 </h3>
                                 <h4>
+                                    Recipe By:
                                     <%= pass.chef %>
                                 </h4>
                             </div>
@@ -99,8 +107,6 @@
                                 <a href="/about"><button class="card-but1">Full Recipe</button></a>
                             </div>
                         </div>
-
-
 
                         <% }) %>
 
@@ -174,25 +180,53 @@
 
         </div>
     </section>
+
+    <section id="section-4">
+        <div id="container">
+            <div class="cate-text">
+                <h2>CATEGORY OF OUR RECIPES</h2>
+
+            </div>
+            <div class="flex2">
+                <div class="category">
+                    <p>Hello, Welcome to Bella's Recipe Blog, where you find all the Unique recipes from people around
+                        the world.
+                        Bella's Recipe Blog has the latest recipes from Cooks and Chefs and People like Ourselves who
+                        loves food</p>
+
+                </div>
+
+                <div class="side-buttons">
+                    <div><button>Local Dishes</button></div>
+                    <div><button>Continental</button></div>
+                    <div><button>Vegetarian</button></div>
+                    <div><button>Juices</button></div>
+                    <div><button>Ice Creams</button></div>
+                    <div><button>Regional Recipes</button></div>      
+                </div>
+
+            </div>
+        </div>
+    </section>
     <footer>
-        <div class="nav-bar">
-            <nav>
-                <ul>
-                    <li><a href="/">HOME</a></li>
-                    <li><a href="/about">ABOUT</a></li>
-                    <li><a href="/contact">CONTACT</a></li>
-                    <li><a href="/explore">EXPLORE</a></li>
+        <div class="flex3">
+            <div class="left-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
 
-                </ul>
+            </div>
 
-            </nav>
+            <div class="right-buttons">
+                <button class="but-log">LogIn</button>
+                <button class="sign-up">Sign Up</button>
+
+            </div>
 
 
         </div>
 
-
-
-        <p>Powered By Blogger &copy; 2022 | THEME BY: ASHBELLA </p>
+        <p>Powered By Blogger &copy; 2022 | Theme By: <span class="">Ashbella</span> </p>
     </footer>
 
 

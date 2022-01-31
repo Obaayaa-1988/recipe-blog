@@ -18,7 +18,7 @@ body{
 /*styling the header*/
 
 #showcase{
-    background-image: url(../images/image2.jpg);
+    background-image: url(../images/image1.jpg);
     height: 700px;
     background-size: cover;
     background-repeat: no-repeat;
@@ -29,6 +29,8 @@ body{
     font-size: 1.5rem;
     padding-top: 2rem;
     font-weight: bolder;
+    color: white;
+    font-family: 'Corinthia';
 }
 .navbar{
     display: flex;
@@ -37,6 +39,7 @@ body{
 
 nav{
     margin-top: 2rem;
+    font-family: 'Oswald';
 }
 
 a:hover{
@@ -49,7 +52,7 @@ nav ul li {
     text-decoration: none;
     font-size: 1rem;
     font-family: 'Cormorant';
-    color: black;
+    color: #fff;
     font-weight: bold;
     margin-left: 2rem;
     margin-top: 5rem;
@@ -59,7 +62,7 @@ nav ul li {
 .navbar ul li a{
     list-style: none;
     text-decoration: none;
-    color: black;
+    color: #fff;
 }
 
 /*styling header button and input field and section*/
@@ -68,28 +71,48 @@ nav ul li {
     height: 50px;
     width: 600px;
     margin-left: 15rem;
-    margin-top: 25rem;
+    margin-top: 12rem;
     outline: none;
     border: none;
     border-radius: 10px;
+}
+
+::placeholder{
+    padding: 2rem;
+
 }
 
 .button-1{
     padding: 1rem 3.5rem;
     font-size: 1rem;
-    background-color: #F9C784;
+    background-color: #c07a1f;
     outline: none;
     border: none;
+    margin-left: -2rem;
     border-radius: 10px;
     color: white;
+    cursor: pointer;
 }
 
 .button-1:hover{
-    background-color: wheat;
+    background-color: black;
     color: white;
-    
-
 }
+
+.showcase-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: 15rem;
+}
+
+.showcase-text h1{
+    color: white;
+    font-size: 4rem;
+}
+
 
 #container{
     width: 80%;
@@ -98,34 +121,53 @@ nav ul li {
 
 /*styling section1*/
 
-.section-text{
-    
-    border: 2px dashed tomato;
-
+.section1{
+    background-color: rgb(240, 236, 236, 0.5);
 }
 
 .section-text h2{
-    text-align: center;
-    margin-top: 2rem;
     margin-bottom: 2rem;
+    font-size: 2rem;
+    margin-left: 10rem;
+    font-family: 'Oswald';
 }
 
-
-.section1 h1{
-    font-size: 2.3rem;
-    text-align: center;
-    margin-top: 5.5rem;
-    color: tomato;
-}
 
 .section1 p{
-    width: 70%;
-    margin-left: 5rem;
-    text-align: center;
-    line-height: 2.5rem;
+    width: 80%;
+    text-align: justify;
+    line-height: 2rem;
     word-spacing: 0.5rem;
     font-size: 1.3rem;
     margin-bottom: 4rem;
+    
+}
+
+.section1 .button-2{
+    padding: 1.5rem 4.5rem;
+    background-color: #c07a1f;
+    border: none;
+    outline: none;
+    color: white;
+    font-family: 'Oswald';
+    border-radius: 5px;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+    cursor: pointer;
+
+}
+
+.section1 .button-2:hover{
+    background-color: black;
+    color: white;
+}
+
+.section1 img{
+    width: 35rem;
+    height:30rem;
+    border-radius: 5px;
+    object-fit: cover;
+    object-position: 50% 50%;
     
 }
 
@@ -134,23 +176,20 @@ nav ul li {
     display: flex;
     justify-content: space-between;
     justify-items: center;
-    margin-top: 5rem;
+    padding-top: 7rem;
 }
 
-.button-2{
+/*.button-2{
     padding: 2rem 9rem;
     margin-top: 9rem;
     font-size: 1.5rem;
     background-color: white;
     border-radius: 5px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-    outline: none;
-    border: 1px dashed tomato;
-    cursor: pointer;
-    margin-left: -5rem;
+    outli
     font-family: 'Oswald';
 
-}
+}*/
 
 .button-2:hover{
     background-color: #F9C7BD;
@@ -160,8 +199,8 @@ nav ul li {
 /* styling sectiontwo*/
 .section2 h2{
     text-align: center;
-    margin-top: 10rem;
-    margin-bottom: 3rem;
+    margin-top: 8rem;
+    margin-bottom: 4rem;
     font-family: 'Oswald';
 
 }
@@ -177,9 +216,10 @@ nav ul li {
     height: 28rem;
     width: 20rem;
     border-radius: 18px;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);  
+    box-shadow: 5px 5px 15px rgba(141, 140, 140, 0.9);  
     transition: 0.5s ease; 
     cursor: pointer; 
+    margin-bottom: 10rem;
 
 }
 
@@ -202,11 +242,11 @@ nav ul li {
 }
 
 .card-but1{
-    padding: 1.5rem 3rem;
+    padding: 1rem 2rem;
     margin-top: 2rem;
     border: none;
     outline: none;
-    background-color: #F9C784;
+    background-color: #c07a1f;
     text-align: center;
     color: white;
     margin-left: 5rem;
@@ -217,13 +257,134 @@ nav ul li {
 }
 
 
+/*styling section-4*/
+#section-4{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url(../images/image8.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    height: 100vh;
+    width: 100%;
+
+}
+
+#section-4 h2{
+    text-align: center;
+    color: white;
+    font-family: 'Oswald';
+    font-size: 1.8rem;
+    font-weight: bolder;
+    padding-top: 2rem;
+
+}
+
+.flex2{
+    display: flex;
+}
+
+.category p{
+    border: 2px dashed #c07a1f;
+    padding-bottom: 15rem;
+    padding-left: 3rem;
+    padding-right: 3rem ;
+
+}
+
+.flex2 p{
+    width: 50%;
+    color: #fff;
+    line-height: 1.5rem;
+    margin-top: 4rem;
+    padding-top: 5rem;
+    font-size: 1.1rem;
 
 
+}
+
+.side-buttons{
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 20px;
+}
+
+.side-buttons button{
+    padding:  2.5rem 4rem;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: 'Oswald';
+    font-size: 1.6rem;
+    white-space: pre-wrap;
+    cursor: pointer;
+}
+
+.side-buttons button:hover{
+    background-color:#c07a1f; 
+    color: #fff;
+}
+ 
 
 
 footer{
-    background-color: #F9C784;; 
+    background-color: rgb(68, 67, 67);
     height: 200px;
-    margin-top: 5rem ;
+    font-family: 'Oswald';
+    font-size: 0.9rem;
+    
+}
+
+footer p{
+    color: #fff;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+   
+
+}
+
+footer button{
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+footer button:hover{
+    background-color: black;
+    color: white;
+}
+
+.but-log:hover{
+    background-color:#c07a1f;
+    color: white;
+    
+
+}
+
+.sign-up{
+    background-color: #c07a1f;
+    color: #fff;
+}
+
+.flex3{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 4rem;
+}
+
+.left-social{
+    font-size: 2rem;
+    
+}
+
+.left-social a{
+    color: white;
 }
 

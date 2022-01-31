@@ -1,12 +1,14 @@
 const WebyModel = require('../model/weby');
 const express = require('express');
+const multer = require('multer');
 
 const saveContact = (req,res) =>{
     const data = {
         recipy: req.body.recipy,
         chef: req.body.chef,
         ingredients: req.body.ingredients,
-        instructions: req.body.instructions
+        instructions: req.body.instructions,
+        imageUpload: req.file.originalname
 
     }
 
@@ -21,6 +23,7 @@ const saveContact = (req,res) =>{
 const saveIndex = (req, res) =>{
     WebyModel.find().then(results => {
         if(results){
+            //res.send(results)
             res.render("index", {field: results})
         }
     })
@@ -28,8 +31,20 @@ const saveIndex = (req, res) =>{
 }
 
 
+const saveAbout = (req, res) =>{
+    WebyModel.findById(req.params.id).then(result => {
+        if(result){
+            res.render("about", {pass: result})
+        }
+    }).catch(err => console.log(err))
+}
+
+
+
+
 module.exports ={
     saveContact,
-    saveIndex
+    saveIndex,
+    saveAbout
 
 }

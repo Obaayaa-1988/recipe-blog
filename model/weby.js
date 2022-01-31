@@ -7,7 +7,7 @@ const WebySchema = new Schema ({
     chef: String,
     ingredients: String,
     instructions: String,
-    imageFile: String,
+    imageUpload: String,
 
 },{timestamps: true});
 

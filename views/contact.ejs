@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Your Recipe</title>
     <link rel='stylesheet' type='text/css' media='screen' href='../contact.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -32,14 +34,14 @@
         <div class="container">
             <h2>ADD YOUR RECIPE</h2>
 
-            <form action="/contact" method="post">
+            <form action="/contact" method="post" enctype="multipart/form-data">
                 <input type="text" class="input2" name="recipy" placeholder="add your recipe name......... "><br>
                 <input type="text" class="input2" name="chef" placeholder="enter your name......... "><br>
                 <textarea cols="80" rows="10" name="ingredients" placeholder="Recipe Ingredients"></textarea><br>
                 <textarea cols="80" rows="10" name="instructions" placeholder="Instruction"></textarea>
-                <input type="file" name="imageFile" id="">
+                <input type="file" name="imageUpload" id="" class="file">
                 <div class="button-flex">
-                    <button class="form-button2">Save Your Recipe</button>
+                <button class="form-button2">Save Your Recipe</button>
                 </div>
             </form>
 
@@ -47,12 +49,30 @@
 
     </section>
 
-
-
     <footer>
-        <p>designed by ashbella</p>
+        <div class="flex3">
+            <div class="left-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
 
+            </div>
+
+            <div class="right-buttons">
+                <button class="but-log">LogIn</button>
+                <button class="sign-up">Sign Up</button>
+
+            </div>
+
+
+        </div>
+
+        <p>Powered By Blogger &copy; 2022 | Theme By: <span class="">Ashbella</span> </p>
     </footer>
+
+
+
+
 
 
 

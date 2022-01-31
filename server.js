@@ -11,9 +11,14 @@ const path = require('path')
 const WebyModel = require('./model/weby')
 
 const blogRoutes = require('./route/recipeRoute')
+require('dotenv').config();
+
+const multer = require('multer');
+
 
 
 const PORT = process.env.PORT || 9595;
+const mongoUrl = process.env.mongoUl
 
 const app = express();
 //if you want to access it the env
@@ -24,7 +29,6 @@ app.use(express.urlencoded({extended:true}));
 app.use(morgan("dev"));
 app.use(blogRoutes);
 
-const mongoUrl = "mongodb://localhost:27017/recipy-mongo-ejs";
 
 mongoose.connect(mongoUrl, {
     useNewUrlParser:true,
