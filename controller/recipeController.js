@@ -32,9 +32,12 @@ const saveIndex = (req, res) =>{
 
 
 const saveAbout = (req, res) =>{
+    console.log(req.params.id)
     WebyModel.findById(req.params.id).then(result => {
         if(result){
+            console.log(result)
             res.render("about", {pass: result})
+          
         }
     }).catch(err => console.log(err))
 }

@@ -141,7 +141,7 @@ section h2{
     
 }
 
-.section-5 p{
+.section-5 .para{
     width: 50%;
     text-align: center;
     margin-top: 1.5rem;
@@ -164,6 +164,10 @@ section h2{
     border-radius: 5px;
     object-fit: cover;
     object-position: 50% 50%;
+
+}
+
+.image-para{
 
 }
 

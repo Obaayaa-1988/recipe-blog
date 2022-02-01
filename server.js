@@ -62,6 +62,10 @@ app.get("/explore", (req,res) => {
     res.render('explore', {title: 'Explore'})
 })
 
+app.use((req, res) => {
+    res.status(404).render('404', {title : "404"})
+})
+
 //post create and save data into the database request
 
 

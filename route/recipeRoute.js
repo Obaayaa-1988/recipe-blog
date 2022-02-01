@@ -11,7 +11,7 @@ const multer = require('multer');
 
 router.get('/', recipeControl.saveIndex)
 
-router.get('/about', recipeControl.saveAbout)
+router.get('/about/:id', recipeControl.saveAbout)
 
 
 
