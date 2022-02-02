@@ -1,7 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Poppins&display=swap');
+
 @import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Kalam:wght@300&family=Poppins&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Abel&family=Assistant:wght@200&family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Kalam:wght@300&family=Poppins&family=Tajawal:wght@200;300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Assistant:wght@200&family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Kalam:wght@300&family=Oswald:wght@200&family=Poppins&family=Tajawal:wght@200;300;400&display=swap');
 
 
@@ -44,14 +42,15 @@ nav{
 
 a:hover{
     color: black;
-    opacity: 0.5;
+    
+    
+    
 }
 
 nav ul li {
     display: inline;
     text-decoration: none;
-    font-size: 1rem;
-    font-family: 'Cormorant';
+    font-size: 1.2rem;
     color: #fff;
     font-weight: bold;
     margin-left: 2rem;
@@ -327,7 +326,7 @@ nav ul li {
     color: #fff;
 }
  
-
+/*styling the footer*/
 
 footer{
     background-color: rgb(68, 67, 67);

@@ -25,6 +25,7 @@ body{
     font-size: 1.5rem;
     padding-top: 2rem;
     font-weight: bolder;
+    font-family: 'Oswald';
 }
 .navbar{
     display: flex;
@@ -46,7 +47,6 @@ nav ul li {
     display: inline;
     text-decoration: none;
     font-size: 1rem;
-    font-family: 'Cormorant';
     font-weight: bold;
     margin-left: 2rem;
     margin-top: 5rem;
@@ -168,6 +168,7 @@ section h2{
 }
 
 .image-para{
+    font-weight: bold;
 
 }
 

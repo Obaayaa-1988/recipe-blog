@@ -1,3 +1,10 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Assistant:wght@200&family=Corinthia:wght@700&family=Cormorant+Garamond:wght@300&family=Kalam:wght@300&family=Oswald:wght@200&family=Poppins&family=Tajawal:wght@200;300;400&display=swap');
+
+
+
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +16,7 @@
     font-size: 1.5rem;
     padding-top: 2rem;
     font-weight: bolder;
+    font-family: 'Oswald';
 }
 .navbar{
     display: flex;
@@ -18,6 +26,7 @@
 nav{
     margin-top: 3rem;
     margin-bottom: 3rem;
+    font-family: 'Oswald';
 }
 
 a:hover{
@@ -29,7 +38,7 @@ nav ul li {
     display: inline;
     text-decoration: none;
     font-size: 1rem;
-    font-family: 'Cormorant';
+    font-family: 'Oswald';
     font-weight: bold;
     margin-left: 2rem;
     margin-top: 5rem;
@@ -39,7 +48,7 @@ nav ul li {
 .navbar ul li a{
     list-style: none;
     text-decoration: none;
-    color: rgb(133, 116, 116);
+    color: black;
 }
 
 .container{
@@ -50,52 +59,118 @@ nav ul li {
 
 #showcase3 img{
     width: 100%;
-    height: 400px;
+    height: 500px;
     object-fit: cover;
     object-position: 50% 50%;
-    margin-top: 3rem;
+    margin-top: 1rem;
     
     
 }
 
 #showcase3 h2{
     text-align: center;
-    font-size: 1.5rem;
-    color: tomato;
-    font-family: 'Corinthia';
-    margin-top: 5rem;
+    font-size:2rem;
+    font-weight: bold;
+    font-family: 'Oswald';
+    margin-top: 3rem;
+}
+
+#showcase3 h3{
+    font-family: 'Oswald';
 }
 
 .ingredient-section{
     width: 1086px;
-    height: 300px;
+    height: 400px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-    border-left: 10px solid tomato;
-    color: yellow;
+    border-left: 10px solid black;
+    font-family: 'Oswald';
+    line-height: 1.1rem;
+    font-weight: bold;
+
+    
 }
 
 .recipe-section{
     width: 1086px;
-    height: 300px;
+    height: 400px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
-    border-left: 10px solid tomato;
+    border-left: 10px solid #c07a1f;;
     border-radius: 2px;
     margin-bottom: 7rem;
+    font-family: 'Oswald';
+    line-height: 1.1rem;
+    font-weight: bold;
+
 }
 
 #showcase3 h4{
     margin-top: 5rem;
     margin-bottom: 2rem;
     text-align: center;
-    color: tomato;
-    font-size: 1.2rem;
-    font-family: 'Corinthia';
+    font-size: 2rem;
+    font-family: 'Oswald';
 }
 
 /*styling the footer*/
 
 footer{
-    background-color: thistle;
-    min-height: 200px;
+    background-color: rgb(68, 67, 67);
+    height: 200px;
+    font-family: 'Oswald';
+    font-size: 0.9rem;
+    
 }
+
+footer p{
+    color: #fff;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3rem;
+   
+
+}
+
+footer button{
+    padding: 1rem 3rem;
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    
+}
+
+footer button:hover{
+    background-color: black;
+    color: white;
+}
+
+.but-log:hover{
+    background-color:#c07a1f;
+    color: white;
+    
+
+}
+
+.sign-up{
+    background-color: #c07a1f;
+    color: #fff;
+}
+
+.flex3{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 4rem;
+}
+
+.left-social{
+    font-size: 2rem;
+    
+}
+
+.left-social a{
+    color: white;
+}
+
     
