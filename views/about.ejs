@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <!---------------------Header for Contact Page---------->
+    <!---------------------Header for about Page---------->
     <header>
         <div class="navbar">
             <div class="mylogo">
@@ -36,8 +36,14 @@
         <div class="container">
             <h2>FULL RECIPE DETAILS</h2>
             <div class="showcase-img">
-                <img src="../images/image10.jpg">
-                <h3>Frying Pan Pizza</h3>
+               <!--- <img src="../images/image10.jpg">-->
+               <img src="/uploads/imageUpload<%= backs.imageUpload %>" alt="" srcset="">
+               <h4>
+                Recipe Name:
+                <%= backs.recipy %>
+            </h4>
+               
+               <!---- <h3>Frying Pan Pizza</h3>-->
             </div>
 
 
@@ -46,7 +52,7 @@
             <div class="ingredient-section">
 
                 <p>
-                    <%= pass.ingredients %>
+                    <%= backs.ingredients %>
                 </p>
 
 
@@ -55,7 +61,7 @@
             <h4>Recipe Steps</h4>
             <div class="recipe-section">
                 <p>
-                    <%= pass.instructions %>
+                    <%= backs.instructions %>
                 </p>
 
             </div>
@@ -82,17 +88,37 @@
             </div>
             <div class="form-card">
                 <h3>Review *</h3>
-                <form>
-                    <input type="text" class="input" placeholder="enter your name">
-                    <textarea placeholder="enter your review here"></textarea>
-                    <button class="form-button">Submit</button>
 
+                <form action="/comment/<%=backs._id%>" method="post">
+                    <input type="text" class="input" name="username" placeholder="enter your name">
+                    <textarea name="comment" placeholder="enter your review here"></textarea>
+                    <input type="text" class="input2" name="recipe_id" value="<%=backs._id%>">
+                    <button class="form-button">Submit</button>
                 </form>
 
             </div>
 
         </div>
 
+    </section>
+
+    <!------section3-->
+    <section>
+        <% if (text.length > 0) { %>
+            <% text.forEach(feed => { %>
+                <div>
+
+                <h3>
+                    <%= feed.username %>
+                </h3>
+                <p>
+                    <%= feed.comment %>
+                </p>
+                </div>
+             
+            <% }) %>
+         
+        <% } %> 
 
     </section>
 

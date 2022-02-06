@@ -5,6 +5,7 @@ const Schema = mongoose.Schema
 const WebySchema = new Schema ({
     recipy: String,
     chef: String,
+    category: String,
     ingredients: String,
     instructions: String,
     imageUpload: String,

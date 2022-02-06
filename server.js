@@ -9,8 +9,10 @@ const morgan = require('morgan')
 const path = require('path')
 
 const WebyModel = require('./model/weby')
+const ReviewModel = require('./model/review')
 
 const blogRoutes = require('./route/recipeRoute')
+
 require('dotenv').config();
 
 const multer = require('multer');
@@ -60,6 +62,10 @@ app.get("/contact", (req,res) => {
 })
 app.get("/explore", (req,res) => {
     res.render('explore', {title: 'Explore'})
+})
+
+app.get("/category", (req,res) => {
+    res.render('category', {title: 'Category'})
 })
 
 app.use((req, res) => {

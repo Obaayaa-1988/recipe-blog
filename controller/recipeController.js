@@ -6,6 +6,7 @@ const saveContact = (req,res) =>{
     const data = {
         recipy: req.body.recipy,
         chef: req.body.chef,
+        category:req.body.category,
         ingredients: req.body.ingredients,
         instructions: req.body.instructions,
         imageUpload: req.file.originalname
@@ -20,7 +21,7 @@ const saveContact = (req,res) =>{
         }) 
 }
 
-const saveIndex = (req, res) =>{
+const fetchIndex = (req, res) =>{
     WebyModel.find().then(results => {
         if(results){
             //res.send(results)
@@ -30,8 +31,8 @@ const saveIndex = (req, res) =>{
 
 }
 
-
-const saveAbout = (req, res) =>{
+/*
+const fetchAbout = (req, res) =>{
     console.log(req.params.id)
     WebyModel.findById(req.params.id).then(result => {
         if(result){
@@ -40,14 +41,15 @@ const saveAbout = (req, res) =>{
           
         }
     }).catch(err => console.log(err))
-}
+}*/
 
 
 
 
 module.exports ={
     saveContact,
-    saveIndex,
-    saveAbout
+    fetchIndex
+    //fetchAbout
+    
 
 }

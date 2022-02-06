@@ -4,14 +4,27 @@ const router = express.Router();
 
 const recipeControl = require('../controller/recipeController')
 
+const reviewControl = require('../controller/reviewController')
+
+
 const multer = require('multer');
 
 
 
+//post and get for the recipe
+router.get('/', recipeControl.fetchIndex)
 
-router.get('/', recipeControl.saveIndex)
+//router.get('/about-recipe/:id', recipeControl.fetchAbout)
 
-router.get('/about/:id', recipeControl.saveAbout)
+
+//post and get for reviews
+router.post('/comment/:snaps', reviewControl.saveReview)
+
+router.get('/about/:id', reviewControl.fetchReviews)
+
+
+
+
 
 
 
@@ -30,6 +43,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage})
 
 router.post("/contact",upload.single('imageUpload'), recipeControl.saveContact )
+
 
 
 

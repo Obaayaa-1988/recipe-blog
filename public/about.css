@@ -117,7 +117,7 @@ nav ul li {
 #image-animate{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-bottom: 5rem;
+    margin-bottom: 20rem;
    
 }
 
@@ -179,6 +179,10 @@ nav ul li {
 
 }
 
+.input2{
+    display: none;
+}
+
 textarea{
     display: block;
     height: 100px;
@@ -194,7 +198,7 @@ textarea{
 .form-button{
     padding: 1rem 2.1rem;
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     background-color:#c07a1f;
     outline: none;
     border: none;
@@ -206,7 +210,22 @@ textarea{
     font-family: 'Oswald'
 }
 
+/*styling section3*/
+#section3{
+    background-color: rgb(240, 236, 236, 0.5);
+    width: 100%;
+    height: 300px;
+}
 
+.review-cards{
+    background-color: white;
+    width: 30rem;
+    height: 5rem;
+    border-radius: 10px;
+    font-family: 'Oswald';
+    font-size: 1.3rem;
+    
+}
 
 
 

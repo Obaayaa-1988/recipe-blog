@@ -74,10 +74,11 @@ nav ul li {
     outline: none;
     border: none;
     border-radius: 10px;
+    padding-left: 2rem;
 }
 
 ::placeholder{
-    padding: 2rem;
+   /* padding: 2rem;*/
 
 }
 
@@ -143,7 +144,7 @@ nav ul li {
 }
 
 .section1 .button-2{
-    padding: 1.5rem 4.5rem;
+    padding: 1.5rem 3rem;
     background-color: #c07a1f;
     border: none;
     outline: none;
@@ -217,13 +218,11 @@ nav ul li {
     border-radius: 18px;
     box-shadow: 5px 5px 15px rgba(141, 140, 140, 0.9);  
     transition: 0.5s ease; 
-    cursor: pointer; 
     margin-bottom: 10rem;
 
 }
 
 .inside-card:hover{
-    transform: scale(1.2);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
@@ -253,6 +252,11 @@ nav ul li {
     font-size: 1.2rem;
     cursor: pointer;
     font-family: 'Oswald';
+}
+
+.card-but1:hover{
+    transform: scale(1.2);
+
 }
 
 
@@ -311,7 +315,10 @@ nav ul li {
 }
 
 .side-buttons button{
-    padding:  2.5rem 4rem;
+    /*padding:  2.5rem 4rem;*/
+    height: 150px;
+    width: 200px;
+    background-color: #fff;
     border: none;
     outline: none;
     border-radius: 5px;
