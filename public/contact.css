@@ -70,7 +70,7 @@ form{
 
 #showcase2 h2{
     text-align: center;
-    padding-top: 5rem;
+    padding-top: 3rem;
     font-size: 2rem;
     color: white;
     font-family: 'Oswald';
@@ -79,17 +79,26 @@ form{
 
 .input2{
     display: block;
-    height: 60px;
+    height: 50px;
     width: 600px;
     outline: none;
     border: none;
     border-radius: 10px;
+    padding-left: 2rem;
+}
+
+label{
+    font-size: 1.4rem;
+    color: #fff;
+    font-family: 'Oswald';
+    font-weight: bolder;
 }
 
 textarea{
     display: block;
     outline: none;
     border: none;
+    padding-left: 2rem;
 }
 
 ::placeholder{
@@ -124,6 +133,37 @@ textarea{
     margin-top: 1rem;
     cursor: pointer;
 }
+/*styling the sign up form*/
+.section-signup h2{
+    text-align: center;
+    font-family: 'Oswald';
+    margin-top: 3rem;
+}
+
+.section-signup form{
+    width: 500px;
+    height: 400px;
+    background-color: blue;
+    padding-left: 5rem;
+    padding-top: 4rem;
+}
+
+.input-sign{
+    display: block;
+    height: 50px;
+    width: 300px;
+    border-radius: 10px;
+    padding-left: 2rem;
+
+}
+
+
+
+
+
+
+
+
 
 /*styling the footer */
 

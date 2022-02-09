@@ -31,6 +31,34 @@ const fetchIndex = (req, res) =>{
 
 }
 
+//fetching data for categories lunch only
+
+const fetchLunch = (req, res) =>{
+    WebyModel.find({'category': 'lunch'}).then(results => {
+        if(results){
+            //res.send(results)
+            res.render("category", {dataCate: results})
+        }
+    })
+
+}
+
+//fetching data for category 
+const fetchVegetarian = (req, res) =>{
+    WebyModel.find({'category': 'vegetarian'}).then(results => {
+        if(results){
+            //res.send(results)
+            res.render("category", {dataCate: results})
+        }
+    })
+
+}
+
+
+
+
+
+
 /*
 const fetchAbout = (req, res) =>{
     console.log(req.params.id)
@@ -48,8 +76,9 @@ const fetchAbout = (req, res) =>{
 
 module.exports ={
     saveContact,
-    fetchIndex
-    //fetchAbout
+    fetchIndex,
+    fetchLunch,
+    fetchVegetarian
     
 
 }

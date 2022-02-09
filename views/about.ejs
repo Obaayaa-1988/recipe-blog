@@ -31,21 +31,18 @@
         </div>
     </header>
     <hr>
-
+    <!------section1-->
     <section id="showcase3">
         <div class="container">
-            <h2>FULL RECIPE DETAILS</h2>
+            <h1>FULL RECIPE DETAILS</h1>
             <div class="showcase-img">
-               <!--- <img src="../images/image10.jpg">-->
-               <img src="/uploads/imageUpload<%= backs.imageUpload %>" alt="" srcset="">
-               <h4>
-                Recipe Name:
-                <%= backs.recipy %>
-            </h4>
-               
-               <!---- <h3>Frying Pan Pizza</h3>-->
-            </div>
+                <img src="/uploads/imageUpload<%= backs.imageUpload %>" alt="" srcset="">
+                <h4>
+                    Recipe Name:
+                    <%= backs.recipy %>
+                </h4>
 
+            </div>
 
             <h4>Ingredients List</h4>
 
@@ -54,7 +51,6 @@
                 <p>
                     <%= backs.ingredients %>
                 </p>
-
 
             </div>
 
@@ -65,11 +61,38 @@
                 </p>
 
             </div>
-
-
         </div>
     </section>
-    <!--------styling section two-->
+
+
+
+    <!------section2-->
+    <section class="section-comment">
+        <div class="container">
+            <h1>Comments From Users</h1>
+        <% if (text.length> 0) { %>
+            <% text.reverse().slice(0,3).forEach(feed=> { %>
+                <div class="review-card">
+                    <h3>
+                        <%= feed.username %>
+                    </h3>
+                    <p>
+                        <%= feed.comment %>
+                    </p>
+
+                    <h6>
+                        <%= feed.rating %>
+                    </h6>
+                </div>
+
+                <% }) %>
+
+                    <% } %>
+        </div>
+    </section>
+
+
+    <!--------styling section three-->
 
     <section id="image-animate">
         <div class="section-image">
@@ -77,21 +100,26 @@
 
         </div>
 
-
         <div class="review-form">
             <div class="form-text">
                 <h4>Leave A Review</h4>
             </div>
-            <div class="star-rating">
-                <h5> Click The Stars To Rate Us</h5>
-
-            </div>
+           
             <div class="form-card">
                 <h3>Review *</h3>
 
                 <form action="/comment/<%=backs._id%>" method="post">
                     <input type="text" class="input" name="username" placeholder="enter your name">
                     <textarea name="comment" placeholder="enter your review here"></textarea>
+                    <h5> Click The Stars To Rate Us</h5>
+                    <div class="star-rating" name="rating">
+                        <h6 class="star">&#9734;</h6>
+                        <h6 class="star">&#9734;</h6>
+                        <h6 class="star">&#9734;</h6>
+                        <h6 class="star">&#9734;</h6>
+                        <h6 class="star">&#9734;</h6>
+                    </div>
+
                     <input type="text" class="input2" name="recipe_id" value="<%=backs._id%>">
                     <button class="form-button">Submit</button>
                 </form>
@@ -99,26 +127,6 @@
             </div>
 
         </div>
-
-    </section>
-
-    <!------section3-->
-    <section>
-        <% if (text.length > 0) { %>
-            <% text.forEach(feed => { %>
-                <div>
-
-                <h3>
-                    <%= feed.username %>
-                </h3>
-                <p>
-                    <%= feed.comment %>
-                </p>
-                </div>
-             
-            <% }) %>
-         
-        <% } %> 
 
     </section>
 
@@ -151,7 +159,23 @@
 
 
 
+<script>
+    const allStars = document.querySelectorAll('.star');
+    allStars.forEach((star, i) => {
+        star.onClick = function () {
+            let currentStar = i + 1;
+            allStars.forEach((star, j) => {
+                if(currentStar >= j+1){
+                    star.innerHTML = '&#9733';
+                }else {
+                    star.innerHTML = '&#9734';
+                }
+            })
+        }
 
+    })
+
+</script>
 
 </body>
 

@@ -196,7 +196,9 @@ nav ul li {
     color: white;
 }
 
-/* styling sectiontwo*/
+
+
+/* styling section2*/
 .section2 h2{
     text-align: center;
     margin-top: 8rem;
@@ -260,6 +262,8 @@ nav ul li {
 }
 
 
+
+
 /*styling section-4*/
 #section-4{
     background-image:linear-gradient(rgba(0, 0, 0, 0.5), 
@@ -268,7 +272,6 @@ nav ul li {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
-
     height: 100vh;
     width: 100%;
 

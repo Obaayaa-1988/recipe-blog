@@ -81,13 +81,11 @@ nav ul li {
     border-radius: 18px;
     box-shadow: 5px 5px 15px rgba(141, 140, 140, 0.9);  
     transition: 0.5s ease; 
-    cursor: pointer; 
     margin-bottom: 10rem;
 
 }
 
 .inside-card:hover{
-    transform: scale(1.2);
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.6);
 }
 
@@ -118,6 +116,13 @@ nav ul li {
     cursor: pointer;
     font-family: 'Oswald';
 }
+
+.card-but1:hover{
+    transform: scale(1.2);
+
+}
+
+
 
 
 

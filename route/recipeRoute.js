@@ -22,6 +22,10 @@ router.post('/comment/:snaps', reviewControl.saveReview)
 
 router.get('/about/:id', reviewControl.fetchReviews)
 
+//routes for categorie recipes only
+
+router.get('/cate-lunch', recipeControl.fetchLunch)
+router.get('/cate-vegetarian', recipeControl.fetchVegetarian)
 
 
 

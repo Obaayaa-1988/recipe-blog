@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Recipe Details</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='../cate.css'>
+    <title>Add Your Recipe</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../log.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!---------------------Header for about Page---------->
+    <!---------------------Header for Contact Page-->
     <header>
         <div class="navbar">
             <div class="mylogo">
@@ -30,50 +30,23 @@
             </nav>
         </div>
     </header>
-    <hr>
+    <section id="showcase2">
+        <div class="container">
+            <h2>ADD YOUR RECIPE</h2>
 
-    <!----section2-->
-
-    <section class="section2">
-        <div id="container">
-            <h2>CATEGORIES</h2>
-            <div class="main-card">
-
-                <% if (dataCate.length) { %>
-
-                    <% dataCate.forEach(main=> { %>
-                        <div class="inside-card">
-                            <div>
-                                <img src="/uploads/imageUpload<%= main.imageUpload %>" alt="" srcset="">
-                            </div>
-                            <div class="card-text">
-                                <h3>
-                                    Recipe Name:
-                                   <%= main.recipy %>
-                                </h3>
-                                
-                                <h4>
-                                    Recipe By:
-                                   <%= main.chef %>
-                                </h4>
-                            </div>
-                            <div class="card-btn">
-                                <a href="/about/<%=main._id %> "><button class="card-but1">See Recipe</button></a>
-                            </div>
-                        </div>
-
-                        <% }) %>
-
-                            <% } %>
-            </div>
-
+            <form >
+                <label>Enter Recipe Name</label>
+                <input type="text" class="input2" name="log-in" placeholder=""><br>
+                <label>Enter Your Name</label>
+                <input type="text" name="log" placeholder=""><br>
+                <button class="form-log">Save Your Recipe</button>        
+            </form>
 
         </div>
+
     </section>
 
-
-    <!---footer-->
-  <footer>
+    <footer>
         <div class="flex3">
             <div class="left-social">
                 <a href="#"><i class="fab fa-facebook"></i></a>
@@ -93,7 +66,6 @@
 
         <p>Powered By Blogger &copy; 2022 | Theme By: <span class="">Ashbella</span> </p>
     </footer>
-
 
 
 
