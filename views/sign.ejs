@@ -6,13 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Add Your Recipe</title>
-    <link rel='stylesheet' type='text/css' media='screen' href='../log.css'>
+    <link rel='stylesheet' type='text/css' media='screen' href='../sign.css'>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <!---------------------Header for Contact Page-->
+    <!---------------------Header for sign up  Page-->
     <header>
         <div class="navbar">
             <div class="mylogo">
@@ -30,37 +30,28 @@
             </nav>
         </div>
     </header>
-    <hr>
 
     <!-------section2-->
-    <section class="section-login">
+    <section class="section-signup">
         <div class="container">
             <div>
-                <h2>Log In Form</h2>
+                <h2>Sign Up Form</h2>
             </div>
-            <div class="log-content">
-                <div class="log-image">
-                    <img src="../images/image15.jpg">
+
+            <div class="form-flex">
+                <div class="form-image">
+                    <img src="../images/image2.jpg">
                 </div>
-                <h3>WELCOME USER</h3>
 
-                <form>
-                    <input type="text" name="" class="input-log" placeholder="enter your name..."><br>
-                    <input type="email" name="" class="input-log" placeholder="enter your email..."><br>
-                    <input type="password" name="" class="input-log" placeholder="enter your password..."><br>
-                    <button class="login-button">Log In</button>
 
-                </form>
+                <div class="form-child1">
+                    <form>
+                        <input type="text" name="username" class="input-sign" placeholder="Username..."><br>
+                        <input type="email" name="email" class="input-sign" placeholder="E-mail"><br>
+                        <input type="password" name="password" class="input-sign" placeholder="Password"><br>
+                        <button class="sign-button">Sign Up</button>
 
-                <div class="log-flex">
-                    <div>
-                        <p>Remember Me</p>
-                    </div>
-
-                    <div>
-                        <p>Forgot Password?</p>
-                    </div>
-
+                    </form>
                 </div>
 
             </div>
@@ -69,9 +60,7 @@
 
     </section>
 
-
-
-    <!------footer-->
+    <!-------footer only-->
     <footer>
         <div class="flex3">
             <div class="left-social">
@@ -86,18 +75,37 @@
                 <button class="sign-up">Sign Up</button>
 
             </div>
-
-
         </div>
 
         <p>Powered By Blogger &copy; 2022 | Theme By: <span class="">Ashbella</span> </p>
     </footer>
 
 
+    <script>
+        const form = document.querySelector("form");
 
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
+            const username = form.username.value;
+            const email = form.email.value;
+            const password = form.password.value;
 
+            try {
+                const response = await fetch("/sign-up", {
+                    method: "POST",
+                    body: JSON.stringify({ username, email, password }),
+                    headers: { "Content-Type": "application/json" }
+                });
 
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.log(error)
+            }
+        });
+
+    </script>
 
 
 </body>

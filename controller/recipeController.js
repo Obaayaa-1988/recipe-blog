@@ -1,7 +1,10 @@
 const WebyModel = require('../model/weby');
+const SignModel = require('../model/signUp');
 const express = require('express');
 const multer = require('multer');
 
+
+//saving recipe, ingredients records in the database
 const saveContact = (req,res) =>{
     const data = {
         recipy: req.body.recipy,
@@ -21,6 +24,7 @@ const saveContact = (req,res) =>{
         }) 
 }
 
+//fetching data from the database
 const fetchIndex = (req, res) =>{
     WebyModel.find().then(results => {
         if(results){
@@ -55,11 +59,37 @@ const fetchVegetarian = (req, res) =>{
 }
 
 
+//controller for signUp request
+const saveSignUp = async(req, res) =>{
+    const {username, email, password } = req.body;
+
+  try {
+    const newUser = new SignModel({
+      username,
+      email,
+      password
+    });
+
+    const user = await newUser.save();
+    if (user) {
+      res.send(user)
+      //   res.status(201).json({ message: "registering successful" });
+    }
+  } catch (error) {
+    console.log(error);
+  }
+
+}
 
 
 
 
-/*
+
+
+
+
+
+/* get request for a sign recipe id
 const fetchAbout = (req, res) =>{
     console.log(req.params.id)
     WebyModel.findById(req.params.id).then(result => {
@@ -72,13 +102,12 @@ const fetchAbout = (req, res) =>{
 }*/
 
 
-
-
 module.exports ={
     saveContact,
     fetchIndex,
     fetchLunch,
-    fetchVegetarian
+    fetchVegetarian,
+    saveSignUp
     
 
 }

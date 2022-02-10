@@ -5,8 +5,8 @@ const router = express.Router();
 const recipeControl = require('../controller/recipeController')
 
 const reviewControl = require('../controller/reviewController')
-
-
+const cookiePasrser = require("cookie-parser");
+const bcrypt = require('bcrypt');
 const multer = require('multer');
 
 
@@ -26,6 +26,13 @@ router.get('/about/:id', reviewControl.fetchReviews)
 
 router.get('/cate-lunch', recipeControl.fetchLunch)
 router.get('/cate-vegetarian', recipeControl.fetchVegetarian)
+
+
+//routes for signup and login
+
+router.post('/sign-up', recipeControl.saveSignUp)
+
+
 
 
 
