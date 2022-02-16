@@ -22,8 +22,11 @@ const cookiePasrser = require("cookie-parser");
 
 const bcrypt = require('bcrypt');
 
+
 const PORT = process.env.PORT || 9595;
+
 const mongoUrl = process.env.mongoUl
+
 
 const app = express();
 //if you want to access it the env
@@ -52,9 +55,9 @@ app.set('view engine', 'ejs');
 
 //routes for our pages
 
-//app.get("/", (req,res) => {
-  //  res.render('index', {title: 'Home'})
-//})
+app.get("/", (req,res) => {
+  res.render('index', {title: 'Home'})
+  })
 
 app.get("/about", (req,res) => {
     res.render('about', {title: 'About'})
@@ -66,6 +69,7 @@ app.get("/contact", (req,res) => {
 app.get("/explore", (req,res) => {
     res.render('explore', {title: 'Explore'})
 })
+
 
 app.get("/log", (req,res) => {
     res.render('log', {title: 'Log'})

@@ -2,6 +2,9 @@ const WebyModel = require('../model/weby');
 const SignModel = require('../model/signUp');
 const express = require('express');
 const multer = require('multer');
+const token = require('jsonwebtoken');
+const { handleErrors, generateToken } = require("../utility/sign.helper");
+
 
 
 //saving recipe, ingredients records in the database
@@ -35,6 +38,22 @@ const fetchIndex = (req, res) =>{
 
 }
 
+//fetching all recipes from the database 
+
+const fetchAllRecipe= (req, res) =>{
+    WebyModel.find().then(results => {
+        if(results){
+            //res.send(results)
+            res.render("recipes", {allRecipe: results})
+        }
+    })
+
+}
+
+
+
+
+
 //fetching data for categories lunch only
 
 const fetchLunch = (req, res) =>{
@@ -60,6 +79,7 @@ const fetchVegetarian = (req, res) =>{
 
 
 //controller for signUp request
+//post request for signup
 const saveSignUp = async(req, res) =>{
     const {username, email, password } = req.body;
 
@@ -71,16 +91,58 @@ const saveSignUp = async(req, res) =>{
     });
 
     const user = await newUser.save();
-    if (user) {
-      res.send(user)
-      //   res.status(201).json({ message: "registering successful" });
-    }
-  } catch (error) {
-    console.log(error);
-  }
 
+    const token = generateToken(user._id);
+
+    res.cookie("jwt", token, { maxAge: 3 * 24 * 60 * 60, httpOnly: true});
+    
+    res.status(201).json( { user: user._id });
+
+} catch (error) {
+        const errors = handleErrors(error);
+        res.json( { errors });
+    }
+    
 }
 
+
+
+
+
+
+//post request for login
+const saveLogin = async (req,res) =>{
+    const {username, email, password} = req.body;
+    try{
+        const user = await SignModel.findOne({ email });
+        
+        if (user) {
+            const sameValue = await bcrypt.compare(password, user.password);
+              if(sameValue)  {
+                  const token  = generateToken(user._id);
+                  res.cookie('jwt', token, {maxAge: 3* 24 * 60 * 60, httpOnly: true});
+
+                  res.status(200).json({user: user.id})
+              } else {
+                  res.json({ errors: "Incorrect password"})
+              }
+
+        }
+        
+
+        if(username.value === "" || username.value === null){
+            res.json({ errors: " fill your username"})
+
+        }
+
+    } catch (error) {
+        const errors = handleErrors(error)
+        console.log(errors)
+        res.json(errors);
+    }
+
+
+};
 
 
 
@@ -107,7 +169,9 @@ module.exports ={
     fetchIndex,
     fetchLunch,
     fetchVegetarian,
-    saveSignUp
+    saveSignUp,
+    saveLogin,
+    fetchAllRecipe
     
 
 }

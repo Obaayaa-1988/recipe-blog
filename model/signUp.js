@@ -1,25 +1,24 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
-const {Schema} = mongoose;
+const { Schema } = mongoose;
 
 const SignSchema = new Schema ({
     username:{
         type: String,
-        required: [true, "Please enter your username"],
-        unique: true
+        required: [true, "Please enter your username"]
     },
 
-    email:{
+    email: {
         type: String,
         required: [true, "Please enter email"],
         unique: true,
         lowercase: true
 
     },
-    password:{
+    password: {
         type: String,
         required: [true, "Please enter a password"],
-        minlength:[5, "Please the password length must be above five"]
+        minlength: [5, "Please the password length must be above five"]
     },
     
 })

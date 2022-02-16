@@ -27,11 +27,16 @@ router.get('/about/:id', reviewControl.fetchReviews)
 router.get('/cate-lunch', recipeControl.fetchLunch)
 router.get('/cate-vegetarian', recipeControl.fetchVegetarian)
 
+//fetching all recipes or categories
+router.get('/all-recipy', recipeControl.fetchAllRecipe)
+
+
+
 
 //routes for signup and login
 
 router.post('/sign-up', recipeControl.saveSignUp)
-
+router.post('/log-in', recipeControl.saveLogin)
 
 
 

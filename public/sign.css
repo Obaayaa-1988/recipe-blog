@@ -84,7 +84,7 @@ nav ul li {
 
 .section-signup form{
     width: 400px;
-    height: 350px;
+    height: 400px;
     background-color: white;
     border-radius: 18px;
     box-shadow: 5px 5px 15px rgba(141, 140, 140, 0.7);
@@ -104,6 +104,7 @@ nav ul li {
     border-left: none;
     border-right: none;
     padding-left: 2rem;
+    margin-bottom: 1rem;
     outline: none;
 
 }

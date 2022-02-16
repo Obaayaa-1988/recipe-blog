@@ -43,14 +43,21 @@
                     <img src="../images/image2.jpg">
                 </div>
 
-
                 <div class="form-child1">
                     <form>
-                        <input type="text" name="username" class="input-sign" placeholder="Username..."><br>
-                        <input type="email" name="email" class="input-sign" placeholder="E-mail"><br>
-                        <input type="password" name="password" class="input-sign" placeholder="Password"><br>
-                        <button class="sign-button">Sign Up</button>
-
+                        <div class="form-field">
+                        <input type="text" name="username" class="input-sign" placeholder="Username">
+                        <div id="user" style="color: tomato; text-align: center"></div>  
+                        </div><br>
+                        <div class="form-field">
+                        <input type="email" name="email" class="input-sign" placeholder="E-mail">
+                        <div id="mail" style="color: tomato; text-align: center"></div>
+                        </div> <br>
+                        <div class="form-field">
+                        <input type="password" name="password" class="input-sign" placeholder="Password">
+                        <div id="pass" style="color: tomato; text-align: center"></div>
+                        </div><br>
+                        <button type="submit" class="sign-button">Sign Up</button>
                     </form>
                 </div>
 
@@ -70,19 +77,24 @@
 
             </div>
 
-            <div class="right-buttons">
+          <!--- <div class="right-buttons">
                 <button class="but-log">LogIn</button>
                 <button class="sign-up">Sign Up</button>
 
-            </div>
+            </div>-->
         </div>
 
         <p>Powered By Blogger &copy; 2022 | Theme By: <span class="">Ashbella</span> </p>
     </footer>
 
-
+    <!-----get request for sign up-->
     <script>
         const form = document.querySelector("form");
+        const userError = document.querySelector('#user');
+        const emailError = document.querySelector('#mail');
+        const passError = document.querySelector('#pass');
+
+
 
         form.addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -90,6 +102,10 @@
             const username = form.username.value;
             const email = form.email.value;
             const password = form.password.value;
+
+            userError.textContent = "";
+            emailError.textContent ="";
+            passError.textContent = "";
 
             try {
                 const response = await fetch("/sign-up", {
@@ -99,7 +115,19 @@
                 });
 
                 const data = await response.json();
-                console.log(data);
+                
+                //console.log(data);
+
+                if(data.errors) {
+                    userError.textContent = data.errors.username;
+                    emailError.textContent = data.errors.email;
+                    passError.textContent = data.errors.password;
+                }
+
+                if(data.user) {
+                    location.assign("/")
+                }
+
             } catch (error) {
                 console.log(error)
             }
