@@ -3,14 +3,18 @@ const jwt = require("jsonwebtoken");
 // error handling function
 
 module.exports.handleErrors = (err) => {
-  let errors = { email: "", password: "" };
+  let errors = { username: "", email: "", password: "" };
 
   if (err.code === 11000) {
     errors.email = "Email already exist please Login";
   }
 
-  if (err.message.includes("User validation failed")) {
+  if (err.message.includes("Logger validation failed")) {
     Object.values(err.errors).forEach((prop) => {
+      if (prop.path === "username") {
+        errors.username = prop.message;
+      }
+
       if (prop.path === "email") {
         errors.email = prop.message;
       }

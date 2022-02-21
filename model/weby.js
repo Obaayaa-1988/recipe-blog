@@ -3,11 +3,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema
 
 const WebySchema = new Schema ({
-    recipy: String,
-    chef: String,
-    category: String,
-    ingredients: String,
-    instructions: String,
+    recipy: {type: String
+    },
+    chef:{type: String
+    },
+    category: {type: String
+    },
+    ingredients: { type: String
+    },
+    instructions: {type: String
+    
+    },
     imageUpload: String,
 
 },{timestamps: true});

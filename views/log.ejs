@@ -46,20 +46,17 @@
 
                 <form>
                     <div class="form-field">
-                    <input type="text" name="username" class="input-log" placeholder="enter your name...">
-                    <div id="user" style="color: tomato; text-align: center"></div> 
-                    </div><br>
-                    <div class="form-field">
                     <input type="email" name="email" class="input-log" placeholder="enter your email...">
-                    <div id="mail" style="color: white; text-align: center"></div> 
+                    <div id="mail" style="color: rgb(19, 18, 18); text-align: center"></div> 
                     </div> <br>
                     <div class="form-field">
                     <input type="password" name="password" class="input-log" id ="pass"placeholder="enter your password...">
-                    <div id="pass" style="color: white; text-align: center"></div> 
+                    <div id="pass" style="color: rgb(10, 10, 10); text-align: center"></div> 
                     </div> <br>
                     <button class="login-button" type="submit">Log In</button>
 
                 </form>
+                
 
                 <div class="log-flex">
                     <div>
@@ -103,46 +100,50 @@
 
     <!----fetching data for login get request-->
     <script>
-        const form = document.querySelector("form");
-        const userError = document.querySelector("#user");
+      const form = document.querySelector("form");
       const emailError = document.querySelector("#mail");
       const passwordError = document.querySelector("#pass");
 
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
-        const username = form.username.value;
+
         const email = form.email.value;
         const password = form.password.value;
-        
-        userError.textContent="";
+    
+
+        console.log(email)
+        console.log(password)
+    
         emailError.textContent = "";
         passwordError.textContent = "";
 
         try {
           const response = await fetch("/log-in", {
             method: "POST",
-            body: JSON.stringify({ username, email, password }),
+            body: JSON.stringify({ email, password }),
             headers: { "Content-Type": "application/json" },
           });
 
           const data = await response.json();
-          console.log(data);
+          //console.log(data);
 
         //   error handling on the client side 
+        console.log(data)
 
-          if (data.errors) {
-            if (data.errors.split(" ").includes("Email")) {
-              emailError.textContent = data.errors;
+          if (data.error) {
+            if (data.error.split(" ").includes("Email")) {
+              emailError.textContent = data.error;
             } else {
-              passwordError.textContent = data.errors;
+              passwordError.textContent = data.error;
             }
           }
 
-          if (data.user) {
+          if(data.user) {
             location.assign("/");
           }
         } catch (error) {
           console.log(error);
+        
         }
       });
     </script>

@@ -3,12 +3,14 @@ const express = require('express')
 const router = express.Router();
 
 const recipeControl = require('../controller/recipeController')
-
+const { authUser, getUser } = require('../middleware/auth.user');
 const reviewControl = require('../controller/reviewController')
 const cookiePasrser = require("cookie-parser");
 const bcrypt = require('bcrypt');
 const multer = require('multer');
 
+
+router.get('*', getUser);
 
 
 //post and get for the recipe
@@ -28,15 +30,21 @@ router.get('/cate-lunch', recipeControl.fetchLunch)
 router.get('/cate-vegetarian', recipeControl.fetchVegetarian)
 
 //fetching all recipes or categories
-router.get('/all-recipy', recipeControl.fetchAllRecipe)
+router.get('/all-recipy', authUser, recipeControl.fetchAllRecipe)
 
 
+
+//serching for recipe, chef etc in the search input
+router.get('/search', recipeControl.saveSearch)
 
 
 //routes for signup and login
 
 router.post('/sign-up', recipeControl.saveSignUp)
 router.post('/log-in', recipeControl.saveLogin)
+//getting all get request
+
+
 
 
 

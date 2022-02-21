@@ -2,8 +2,12 @@ const WebyModel = require('../model/weby');
 const SignModel = require('../model/signUp');
 const express = require('express');
 const multer = require('multer');
+const bcrypt = require('bcrypt')
 const token = require('jsonwebtoken');
 const { handleErrors, generateToken } = require("../utility/sign.helper");
+const { authUser, getUser } = require('../middleware/auth.user');
+
+
 
 
 
@@ -77,6 +81,24 @@ const fetchVegetarian = (req, res) =>{
 
 }
 
+//get request for search
+
+const saveSearch = (req, res) => {
+    WebyModel.find().then(results => {
+        
+        if(Object.keys(req.query).length) {
+            const renders =  results.filter(result => result.recipy.includes(req.query.search) || result.chef.includes(req.query.search))
+            console.log(renders)
+            if(renders.length) {
+                res.render("search", { searchData: renders})
+            }
+            else {
+                res.render("search", { searchData: results})
+            }
+        }
+        
+    })
+}
 
 //controller for signUp request
 //post request for signup
@@ -100,49 +122,44 @@ const saveSignUp = async(req, res) =>{
 
 } catch (error) {
         const errors = handleErrors(error);
+        console.log(error.message)
         res.json( { errors });
     }
     
 }
 
 
+//login post request
 
+const saveLogin = async (req, res) => {
+    const { email, password} = req.body
 
+    try {
+        const user = await SignModel.findOne({email})
+        console.log(user)
 
-
-//post request for login
-const saveLogin = async (req,res) =>{
-    const {username, email, password} = req.body;
-    try{
-        const user = await SignModel.findOne({ email });
-        
-        if (user) {
-            const sameValue = await bcrypt.compare(password, user.password);
-              if(sameValue)  {
-                  const token  = generateToken(user._id);
-                  res.cookie('jwt', token, {maxAge: 3* 24 * 60 * 60, httpOnly: true});
-
-                  res.status(200).json({user: user.id})
-              } else {
-                  res.json({ errors: "Incorrect password"})
-              }
-
-        }
-        
-
-        if(username.value === "" || username.value === null){
-            res.json({ errors: " fill your username"})
+        if(user) {
+            const isSame = await bcrypt.compare(password, user.password);
+            console.log(isSame)
+            if(isSame) {
+                const token = generateToken(user._id);
+                res.cookie('jwt', token, {maxAge: 3* 24 * 60 * 60, httpOnly: true});
+                res.status(200).json({user: user._id})
+            } else {
+                res.json({errors: "Incorrect Password"})
+            } 
+        } else{
+            res.json({errors: "Email doesn't exis please sign up"})
 
         }
-
+        
     } catch (error) {
-        const errors = handleErrors(error)
-        console.log(errors)
-        res.json(errors);
+        const errors = handleErrors(error);
+        
     }
 
+}
 
-};
 
 
 
@@ -171,7 +188,8 @@ module.exports ={
     fetchVegetarian,
     saveSignUp,
     saveLogin,
-    fetchAllRecipe
+    fetchAllRecipe,
+    saveSearch
     
 
 }

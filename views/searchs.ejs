@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Recipe Details</title>
+    <link rel='stylesheet' type='text/css' media='screen' href='../search.css'>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/1935d064dd.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <!---------------------Header for about Page---------->
+    <header>
+        <div class="navbar">
+            <div class="mylogo">
+                <h1>BELLA'S</h1s>
+
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/explore">EXPLORE</a></li>
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <hr>
+
+    <!----section2-->
+
+    <section class="section2">
+        <div id="container">
+            <h2>TOP RECIPES THIS WEEK</h2>
+            <div class="main-card">
+
+                <% if (searchData.length) { %>
+
+                    <% searchData.forEach(pass=> { %>
+                        <div class="inside-card">
+                            <div>
+                                <img src="/uploads/imageUpload<%= pass.imageUpload %>" alt="" srcset="">
+                            </div>
+                            <div class="card-text">
+                                <h3>
+                                    Recipe Name:
+                                    <%= pass.recipy %>
+                                </h3>
+                                <h4>
+                                    Recipe By:
+                                    <%= pass.chef %>
+                                </h4>
+                            </div>
+                            <div class="card-btn">
+                                <a href="/about/<%=pass._id %> "><button class="card-but1">See Recipe</button></a>
+                            </div>
+                        </div>
+
+                        <% }) %>
+
+                            <% } %>
+            </div>
+
+
+        </div>
+    </section>
+
+    
+
+
+
+    <!---footer-->
+  <footer>
+        <div class="flex3">
+            <div class="left-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+
+            </div>
+
+            <div class="right-buttons">
+                <button class="sign-up">Log Out</button>
+
+            </div>
+
+
+        </div>
+
+        <p>Powered By Blogger &copy; 2022 | Theme By: <span class="">Ashbella</span> </p>
+    </footer>
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
