@@ -22,7 +22,7 @@ const saveContact = (req,res) =>{
         imageUpload: req.file.originalname
 
     }
-
+    
     const storeData = new WebyModel(data);
         storeData.save().then(results => {
             if(results) res.redirect("/explore")

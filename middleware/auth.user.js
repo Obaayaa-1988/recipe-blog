@@ -1,7 +1,6 @@
 const jwt = require("jsonwebtoken");
 const SignModel = require('../model/signUp');
 
-
 //protecting the routes
 
 module.exports.authUser = (req, res, next) => {

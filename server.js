@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 
 const morgan = require('morgan')
 
-const path = require('path')
+const path = require('path');
 
 const WebyModel = require('./model/weby')
 const ReviewModel = require('./model/review')
@@ -24,10 +24,6 @@ const bcrypt = require('bcrypt');
 
 const { authUser, getUser } = require('./middleware/auth.user');
 
-
-
-
-
 const PORT = process.env.PORT || 9595;
 
 const mongoUrl = process.env.mongoUl
@@ -39,6 +35,7 @@ const app = express();
 app.use(cookiePasrser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(morgan("dev"));
 app.use(blogRoutes);
 

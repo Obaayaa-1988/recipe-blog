@@ -50,7 +50,7 @@ router.post('/log-in', recipeControl.saveLogin)
 
 
 
-
+//storing an image to the database
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb){
@@ -75,4 +75,4 @@ router.post("/contact",upload.single('imageUpload'), recipeControl.saveContact )
 
 
 
-module.exports = router
+module.exports = router;
